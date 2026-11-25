@@ -1,0 +1,717 @@
+:root {
+    --dark-green: #0a1b14;
+    --light-green: #badbce;
+    --white: #f0f8ff;
+    --gray: #808080;
+    --light-gray: #cecece;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: 0.4s;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cm';
+}
+
+body {
+    background-color: var(--white);
+}
+
+@font-face {
+    font-family: "Cm";
+    src: url(../fonts/Comfortaa.ttf);
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* НАЧАЛО ХЭДЕРА */
+.header {
+    background-color: var(--light-green);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 150px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    color: var(--dark-green);
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 20px 0px;
+
+    &:hover {
+        color: var(--white);
+        transform: translateY(-3px);
+        cursor: pointer;
+    }
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    width: 0;
+    height: 2px;
+    transition: 0.4s;
+}
+
+nav a:hover::after {
+    width: 100%;
+    cursor: pointer;
+}
+
+.tel {
+    position: relative;
+    display: inline-block;
+    padding: 20px 0px;
+    font-size: 20px;
+    color: var(--dark-green);
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--white);
+        transform: translateY(-3px);
+    }
+}
+
+.tel::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    width: 0;
+    height: 2px;
+}
+
+.tel:hover::after {
+    width: 100%;
+    cursor: pointer;
+}
+
+.header-btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: var(--dark-green);
+    border-radius: 10px;
+    color: var(--white);
+    border: 1px solid transparent;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--dark-green);
+        border: 1px solid var(--dark-green);
+        cursor: pointer;
+    }
+}
+
+/* КОНЕЦ ХЭДЕРА */
+
+/* НАЧАЛО БАННЕРА */
+.banner {
+    background: url(../image/banner/banner.png) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 850px;
+    box-shadow: inset 800px -300px 400px 10px #00000070;
+}
+
+.main-banner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 300px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.main-banner h1 {
+    font-size: 56px;
+    font-weight: bolder;
+    color: var(--white);
+}
+
+.main-banner p {
+    font-size: 30px;
+    color: var(--white);
+    line-height: 150%;
+}
+
+.banner-btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--dark-green);
+    border: 2px solid transparent;
+
+    &:hover {
+        color: var(--white);
+        border: 2px solid var(--white);
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
+/* КОНЕЦ БАННЕРА */
+
+/* НАЧАЛО 1 БЛОКА */
+.block1 {
+    display: flex;
+    padding: 160px 0;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title {
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.block1-filter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: start;
+}
+
+.block1-filter button {
+    border: 1px solid var(--gray);
+    color: var(--gray);
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.block1-filter button:hover {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    border: 1px solid var(--dark-green);
+    cursor: pointer;
+}
+
+#active {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    border: 1px solid var(--dark-green);
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.block1-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+.block1-cad {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    gap: 20px;
+    box-shadow: 0 0 7px 0.5px var(--gray);
+    padding-bottom: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 40px 1px var(--gray);
+        transform: translateY(-5px);
+    }
+}
+
+.cad-text {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.block1-cad img {
+    width: 370px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.block1-cad h1 {
+    border: 1px solid var(--dark-green);
+    color: var(--dark-green);
+    background-color: var(--light-green);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.block1-cad p {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.block1-cad h2 {
+    font-size: 16px;
+    font-weight: bolder;
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block1-cad h2 span {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--dark-green);
+}
+
+.block1-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    background-color: var(--dark-green);
+    border-radius: 10px;
+    color: var(--white);
+    border: 1px solid transparent;
+    text-align: center;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--dark-green);
+        border: 1px solid var(--dark-green);
+        cursor: pointer;
+    }
+}
+
+/* КОНЕЦ 1 БЛОКА */
+
+
+/* НАЧАЛО 2 БЛОКА */
+.block2-bgc {
+    background-color: var(--light-green);
+    padding: 90px 0;
+}
+
+.block2 {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.block2-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block2-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    box-shadow: 0 0 4px 0.2px var(--dark-green);
+    width: 285px;
+    border-radius: 10px;
+    background-color: #ffffff38;
+
+    &:hover {
+        box-shadow: 0 0 15px 0.5px var(--dark-green);
+        background-color: #ffffff70;
+    }
+
+}
+
+.block2-card img {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 7px;
+}
+
+.block2-card h1 {
+    font-size: 20px;
+}
+
+.block2-card p {
+    font-size: 16px;
+    color: var(--dark-green);
+}
+
+/* КОНЕЦ 2 БЛОКА */
+
+
+/* НАЧАЛО 3 БЛОКА */
+.block3 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 160px;
+}
+
+.block3-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.block3-card {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 0 6px 0.5px var(--gray);
+
+    &:hover {
+        box-shadow: 0 0 15px 1px var(--gray);
+    }
+}
+
+.block3-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.block3-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.block3-special {
+    align-self: flex-start;
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    border: 1px solid var(--dark-green);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.block3-card-text h2 {
+    font-size: 24px;
+    font-weight: bolder;
+    color: var(--dark-green);
+}
+
+.block3-card-text h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--gray);
+}
+
+.block3-card-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--dark-green);
+}
+
+.block3-btn {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background-color: var(--dark-green);
+    color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--dark-green);
+        border: 1px solid var(--dark-green);
+        cursor: pointer;
+    }
+}
+
+/* КОНЕЦ 3 БЛОКА */
+
+
+/* НАЧАЛО 4 БЛОКА */
+.block4 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 160px;
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq {
+    border: 1px solid var(--dark-green);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq h1 {
+    font-size: 20px;
+}
+
+summary {
+    display: flex;
+}
+
+summary::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 30px;
+    transition: 0.4s;
+}
+
+.faq[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq p {
+    margin-top: 20px;
+}
+
+/* КОНЕЦ 4 БЛОКА */
+
+/* НАЧАЛО 5 БЛОКА */
+.block5-banner {
+    background: url(../image/block5/bgbanner1.jpeg) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 500px -300px 400px 10px #00000070;
+}
+
+.block5 {
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    margin-top: 160px;
+    justify-content: center;
+    gap: 40px;
+}
+
+.block5-text {
+    color: var(--white);
+    padding: 20px;
+    background-color: #c2c2c25d;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 10px 1px var(--white);
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.block5-text h1 {
+    font-size: 42px;
+}
+
+.block5-text p {
+    font-size: 30px;
+}
+
+.block5 form {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 21px;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.min-form label {
+    font-size: 16px;
+    color: var(--dark-green);
+}
+
+.min-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mini-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.mini-form label {
+    font-size: 16px;
+    color: var(--dark-green);
+}
+
+.mini-form label a {
+    text-decoration: underline;
+    color: var(--dark-green);
+}
+
+.min-form input {
+    padding: 10px;
+    color: var(--gray);
+    border-radius: 10px;
+    border: 0.1px solid var(--light-gray);
+
+    &:focus-within {
+        outline: 0.1px solid transparent;
+        box-shadow: 0 0 5px 0.1px var(--dark-green);
+    }
+}
+
+.min-form textarea {
+    padding: 10px;
+    color: var(--gray);
+    border-radius: 10px;
+    height: 37px;
+    border: 0.1px solid var(--light-gray);
+
+    &:focus-within {
+        outline: 0.1px solid transparent;
+        box-shadow: 0 0 5px 0.1px var(--dark-green);
+    }
+}
+
+.block5 button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--dark-green);
+    border-radius: 10px;
+    color: var(--white);
+    border: 1px solid transparent;
+    text-align: center;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--dark-green);
+        border: 1px solid var(--dark-green);
+        cursor: pointer;
+    }
+}
+
+/* КОНЕЦ 5 БЛОКА */
+
+
+/* НАЧАЛО ФУТЕРА */
+.bannerfooter {
+    background-color: var(--dark-green);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 80px 0;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    align-items: flex-start;
+}
+
+.f1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.f2 {
+    display: flex;
+    gap: 5px;
+}
+
+.f1t {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logofooter {
+    width: 200px;
+}
+
+.foot h1 {
+    color: var(--gray);
+    font-size: 20px;
+}
+
+.foot a,
+.foot p {
+    color: var(--light-gray);
+    font-size: 14px;
+}
+
+.foot a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.f2 img {
+    width: 15px;
+}
+
+.kopi {
+    color: var(--light-gray);
+    font-size: 14px;
+    position: relative;
+    text-align: right;
+    line-height: 160%;
+}
+
+/* КОНЕЦ ФУТЕРА */
+
+
+/* КНОПКА НАВЕРХ */
+.up {
+    position: fixed;
+    right: 50px;
+    bottom: 40px;
+    background-color: var(--white);
+    color: var(--dark-green);
+    border: 1px solid var(--light-gray);
+    border-radius: 50%;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* КОНЕЦ КНОПКИ НАВЕРХ */
